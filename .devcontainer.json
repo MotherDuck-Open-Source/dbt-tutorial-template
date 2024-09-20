@@ -1,0 +1,54 @@
+{
+    "name": "dbt",
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "settings": {
+        "terminal.integrated.defaultProfile.linux#": "/bin/sh",
+        "files.associations": {
+            "*.sql": "jinja-sql",
+            "*.yml": "yaml",
+            "**/target/**": ""
+        },
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/__pycache__": true
+        },
+        "workbench.editor.highlightModifiedTabs": true,
+        "workbench.editor.labelFormat": "medium",
+        "workbench.editor.revealIfOpen": true,
+        "yaml.schemas": {
+            "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_yml_files.json": [
+                "/*.yml",
+                "!profiles.yml",
+                "!dbt_project.yml",
+                "!packages.yml",
+                "!selectors.yml",
+                "!profile_template.yml"
+            ],
+            "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/dbt_project.json": [
+                "dbt_project.yml"
+            ],
+            "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/selectors.json": [
+                "selectors.yml"
+            ],
+            "https://raw.githubusercontent.com/dbt-labs/dbt-jsonschema/main/schemas/packages.json": [
+                "packages.yml"
+            ]
+        }
+    },
+    "extensions": [
+        "editorconfig.editorconfig",
+        "amodio.find-related",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "visualstudioexptteam.vscodeintellicode",
+        "samuelcolvin.jinjahtml",
+        "redhat.vscode-yaml",
+        "innoverio.vscode-dbt-power-user"
+    ],
+    "postCreateCommand": "make build",
+    "remoteUser": "vscode"
+}
