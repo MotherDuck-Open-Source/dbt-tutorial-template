@@ -2,3 +2,4 @@ duckdb
 *.duckdb
 
 .pdm-python
+# logs/**

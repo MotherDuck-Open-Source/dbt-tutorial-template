@@ -4,6 +4,8 @@ DBT_PROFILES_PATH=~/.dbt/profiles.yml
 DBT_PROFILES_EXAMPLE=dbt_profile.example
 DBT_PROJECT_DIR=hello_world
 
+include .env
+
 
 profile: ## Ensure dbt profile existence
 	test -f $(DBT_PROFILES_PATH) && echo "dbt profile already exists" || mkdir -p ~/.dbt && cp $(DBT_PROFILES_EXAMPLE) $(DBT_PROFILES_PATH)
