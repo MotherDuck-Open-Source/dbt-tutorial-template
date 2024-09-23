@@ -2,4 +2,4 @@ duckdb
 *.duckdb
 
 .pdm-python
-# logs/**
+./hello_world/logs/**
