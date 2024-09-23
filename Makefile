@@ -1,6 +1,20 @@
+
+
+DBT_PROJECT_DIR=hello_world
+
+
+bootstrap:
+	# Get all the dbt things up and running
+	pdm install
+
+test:
+	cd $(DBT_PROJECT_DIR) && pdm run dbt test
+
+run:
+	cd $(DBT_PROJECT_DIR) && pdm run dbt run
+
 build:
-	pip install --upgrade pip
-	pip install -r requirements.txt
-	wget https://github.com/duckdb/duckdb/releases/download/v1.1.0/duckdb_cli-linux-amd64.zip
-	unzip duckdb_cli-linux-amd64.zip
-	rm duckdb_cli-linux-amd64.zip
+	cd $(DBT_PROJECT_DIR) && pdm run dbt build
+
+docs:
+	cd $(DBT_PROJECT_DIR) && pdm run dbt docs generate && pdm run dbt docs serve || true
