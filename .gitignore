@@ -1,2 +1,5 @@
 duckdb
 *.duckdb
+
+.pdm-python
+./hello_world/logs/**
